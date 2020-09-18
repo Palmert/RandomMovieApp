@@ -1,0 +1,16 @@
+apply plugin: 'java-library'
+apply plugin: 'kotlin'
+
+dependencies {
+  def koin_version = "2.1.6"
+  implementation fileTree(dir: 'libs', include: ['*.jar'])
+  implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+  implementation project(path: ':data')
+  testImplementation "io.mockk:mockk:1.10.0"
+  testImplementation "org.koin:koin-test:$koin_version"
+  testImplementation "io.mockk:mockk:1.10.0"
+  testImplementation 'junit:junit:4.12'
+}
+
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
